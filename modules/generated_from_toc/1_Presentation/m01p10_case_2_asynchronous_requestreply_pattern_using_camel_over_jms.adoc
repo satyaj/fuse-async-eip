@@ -1,0 +1,34 @@
+// Asciidoctor attributes
+
+== Case 2: Asynchronous Request-Reply Pattern using Camel over JMS
+
+* Exchange Pattern *InOut* set on Message Exchange
+
+* Supported by underlying Camel components
+
+* Camel Request/Reply over JMS:
+
+.Camel Async over JMS
+[options="header"]
+|===
+|Queue Type | Performance | Cluster | Summary
+|Temporary | Fast | Yes | Temporary Queue automatically created by Camel.
+|Shared | Slow | Yes | Shared, pre-created queue used for reply messages.
+|Exclusive | Fast | No* | Exclusive, pre-created queue used for reply messages.
+|===
+
+
+ifdef::audioscript[]
+audio::audio/m01p09_case_2:_asynchronous_requestreply_pattern_using_camel_over_jms.mp3[]
+endif::[]
+
+ifdef::showscript[]
+[.notes]
+****
+//tag::snippet[]
+
+== TITLE
+
+//end::snippet[]
+****
+endif::[]

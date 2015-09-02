@@ -1,0 +1,72 @@
+// Asciidoctor attributes
+
+== Case 1: Code Example & Demo
+
+=== Client:
+
+.Sending Messages to the Request Queue
+[source, java]
+----
+                
+                // Set the key JMS message properties that will facilitate the request/reply functionality
+                message.setJMSReplyTo(replyQueue);
+                message.setJMSCorrelationID(UUID.randomUUID().toString());
+...
+----
+
+.Listening to the Response Queue
+[source, java]
+----
+
+           consumer.setMessageListener(new MessageListener() {
+            	@Override
+            	public void onMessage(Message reply) {
+            		// Handle replies
+            		if (reply instanceof ObjectMessage) {
+            			try {
+            				Object o = ((ObjectMessage) reply).getObject();
+	            				ObjectMessage request = 							correlationMap.remove(reply.getJMSCorrelationID());
+...
+----
+
+=== Server
+
+[source, java]
+
+----
+            while (true) {
+                Message message = consumer.receive(MESSAGE_TIMEOUT_MILLISECONDS);
+                if (message != null) {
+                    if (message instanceof ObjectMessage) {
+                        Object o = ((ObjectMessage) message).getObject();
+                        if (o instanceof Integer) {
+	                    	Integer factorialInput = (Integer)o;
+	                        LOG.info("Received request to compute factorial(" + factorialInput + ")");
+	                        BigDecimal result = Factorial.factorial(factorialInput);
+	                        	
+	                        // Create a reply message
+	                        Message replyMessage = session.createObjectMessage(result);
+	                        
+	                        // Carry over the correlation id so that the client can determine for which
+	                        // request this reply is for.
+	                        replyMessage.setJMSCorrelationID(message.getJMSCorrelationID());
+	                        
+	                        // Send the processed message to the JMSReplyTo value
+	                        producer.send(message.getJMSReplyTo(), replyMessage);
+
+----
+
+ifdef::audioscript[]
+audio::audio/m01p08_case_1:_code_example_demo.mp3[]
+endif::[]
+
+ifdef::showscript[]
+[.notes]
+****
+//tag::snippet[]
+
+== TITLE
+
+//end::snippet[]
+****
+endif::[]

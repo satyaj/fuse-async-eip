@@ -1,0 +1,10 @@
+// Asciidoctor attributes
+
+== Case 4: Code Example & Demo
+
+ifdef::audioscript[]
+audio::audio/m01p15_case_4:_code_example_demo.mp3[]
+endif::[]
+
+
+

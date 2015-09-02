@@ -1,0 +1,28 @@
+// Asciidoctor attributes
+
+== Case 1: Asynchronous Request-Reply Pattern over JMS
+
+
+* Producer set 2 properties to send the message
+** *JMSReplyTo* : Destination for the response message
+** *JMSCorrelationID* : Unique ID used to match/correlate messages (request/response)
+* Consumer uses the Message JMSHeader to reply to the request
+
+.Request Reply over JMS
+image::images/request-reply-jms.png[width=500]
+
+
+ifdef::audioscript[]
+audio::audio/m01p07_case_1:_asynchronous_requestreply_pattern_over_jms.mp3[]
+endif::[]
+
+ifdef::showscript[]
+[.notes]
+****
+//tag::snippet[]
+
+== TITLE
+
+//end::snippet[]
+****
+endif::[]

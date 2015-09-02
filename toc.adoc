@@ -1,0 +1,36 @@
+[source,text]
+----
+Version 0.1 : Satya Jayanti (01 Sep 2015)
+
+----         
+
+= 1. Presentation
+
+== JBoss A-MQ Product Architecture
+
+== JBoss Fuse Product Architecture
+
+== Enterprise Integration Patterns in A-MQ & Fuse
+
+== Asynchronous Request-Reply Pattern
+
+== Asynchronous Callback in Camel
+
+== Case 1 Asynchronous Request-Reply Pattern over JMS
+
+== Case 1 Code Example & Demo
+
+== Case 2 Asynchronous Request-Reply Pattern using Camel over JMS
+
+== Case 2 Code Example & Demo
+
+== Case 3 Asynchronous Request-Reply Pattern using Camel over Seda
+
+== Case 3 - Code Example & Demo
+
+== Case 4 Asynchronous Request-Reply Pattern using Camel over direct
+
+== Case 4 Code Example & Demo
+
+
+

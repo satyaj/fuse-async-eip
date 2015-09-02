@@ -1,0 +1,23 @@
+:noaudio:
+
+ifdef::revealjs_slideshow[]
+
+[#cover,data-background-image="revealjs-redhat/image/1156524-bg_redhat.png" data-background-color="#cc0000"]
+== &nbsp;
+
+[#cover-h1] 
+Asynchronous Request-Reply Pattern Implementation Techniques using JBoss A-MQ/Fuse
+
+[#cover-h2] 
+Satya Jayanti
+
+[#cover-h3]
+Senior Solution Architect
+Global Partner & Technical Enablement
+
+
+[#cover-logo] 
+image::{revealjs_cover_image}[] 
+
+endif::[]
+

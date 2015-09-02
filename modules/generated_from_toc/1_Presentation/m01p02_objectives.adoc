@@ -1,0 +1,43 @@
+// Asciidoctor attributes
+
+== Module Topics
+
+* JBoss A-MQ & JBoss Fuse Introduction
+
+* Enterprise Integration Patterns - Introduction
+
+* Asynchronous Request Reply Pattern
+
+* Implementing Asynchronous Request Reply over A-MQ
+
+* Camel Async API
+
+* Implementing Asynchronous Request Reply Pattern in Camel 
+
+* Demo
+
+ifdef::audioscript[]
+audio::audio/m01p02_objectives.mp3[]
+endif::[]
+
+By completing this module you will learn about the following topics:
+
+  * Item 1
+  * Item 2
+
+ifdef::showscript[]
+[.notes]
+****
+//tag::snippet[]
+
+== Module Topics
+
+ifdef::audioscript[]
+audio::audio/m01p02_objectives.mp3[]
+endif::[]
+
+* This module introduces ...
+
+//end::snippet[]
+****
+endif::[]

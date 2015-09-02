@@ -1,0 +1,18 @@
+// Asciidoctor attributes
+
+== Case 2: Code Example & Demo
+
+ifdef::audioscript[]
+audio::audio/m01p10_case_2:_code_example_demo.mp3[]
+endif::[]
+
+ifdef::showscript[]
+[.notes]
+****
+//tag::snippet[]
+
+== TITLE
+
+//end::snippet[]
+****
+endif::[]

@@ -1,0 +1,36 @@
+:toc: left
+
+ifndef::slideshow[]
+== 1_Presentation
+endif::[]
+
+include::m01p01_cover.adoc[]
+
+include::m01p02_objectives.adoc[]
+
+include::m01p03_jboss_amq_product_architecture.adoc[]
+
+include::m01p04_jboss_fuse_product_architecture.adoc[]
+
+include::m01p05_enterprise_integration_patterns_in_amq_fuse.adoc[]
+
+include::m01p06_asynchronous_requestreply_pattern.adoc[]
+
+include::m01p07_asynchronous_callback_in_camel.adoc[]
+
+include::m01p08_case_1_asynchronous_requestreply_pattern_over_jms.adoc[]
+
+include::m01p09_case_1_code_example_demo.adoc[]
+
+include::m01p10_case_2_asynchronous_requestreply_pattern_using_camel_over_jms.adoc[]
+
+include::m01p11_case_2_code_example_demo.adoc[]
+
+include::m01p12_case_3_asynchronous_requestreply_pattern_using_camel_over_seda.adoc[]
+
+include::m01p13_case_3_code_example_demo.adoc[]
+
+include::m01p14_case_4_asynchronous_requestreply_pattern_using_camel_over_direct.adoc[]
+
+include::m01p15_case_4_code_example_demo.adoc[]
+

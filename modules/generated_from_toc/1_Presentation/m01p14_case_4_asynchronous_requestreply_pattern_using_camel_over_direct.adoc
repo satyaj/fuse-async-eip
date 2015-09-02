@@ -1,0 +1,18 @@
+// Asciidoctor attributes
+
+== Case 4: Asynchronous Request-Reply Pattern using Camel over direct
+
+ifdef::audioscript[]
+audio::audio/m01p14_case_4:_asynchronous_requestreply_pattern_using_camel_over_direct.mp3[]
+endif::[]
+
+ifdef::showscript[]
+[.notes]
+****
+//tag::snippet[]
+
+== TITLE
+
+//end::snippet[]
+****
+endif::[]

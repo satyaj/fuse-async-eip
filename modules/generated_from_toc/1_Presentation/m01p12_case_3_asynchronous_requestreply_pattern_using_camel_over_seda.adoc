@@ -1,0 +1,44 @@
+// Asciidoctor attributes
+
+== Case 3: Asynchronous Request-Reply Pattern using Camel over Seda
+
+* SEDA: asynchronous Staged Event Driven Architecture (SEDA) behaviour.
+* Messages are exchanged on a BlockingQueue 
+* Separate threads for consumer and producer.
+
+* Supports asynchronous request/reply
+** Caller waits for async route to complete
+** Only chain 2 routes via seda
+
+[source, java]
+----
+
+from("mina:tcp://0.0.0.0:9876?textline=true&sync=true").to("seda:input");
+ 
+from("seda:input").to("bean:processInput").to("bean:createResponse");
+
+----
+
+* Why use SEDA?
+** Asynchronous without JMS complexity/specification
+** In memory, faster performance
+** Use within same _CamelContext_
+
+* Why Not?
+** No persistence
+** Runs within same JVM
+
+ifdef::audioscript[]
+audio::audio/m01p11_case_3:_asynchronous_requestreply_pattern_using_camel_over_seda.mp3[]
+endif::[]
+
+ifdef::showscript[]
+[.notes]
+****
+//tag::snippet[]
+
+== TITLE
+
+//end::snippet[]
+****
+endif::[]

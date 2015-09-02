@@ -1,0 +1,45 @@
+// Asciidoctor attributes
+
+== Asynchronous Callback in Camel
+
+* Async API based on Java Concurrency API
+* Future API and Callbacks
+
+.Synchronous Request-Reply
+
+image::images/camel_sync_request_reply.png[]
+
+.Asynchronous Request-Reply
+image::images/camel_async_request_reply.png[]
+
+.Async API
+[options="header"]
+|===
+|Method | Returns | Summary
+| asyncSend | Future<Exchange> | Sends async exchange to Camel endpoint, control returns immediately to  caller.
+| asyncSendBody | Future<Object> | Sends async request body only. InOnly exchange, no reply expected.
+| asyncRequestBody | Future<Object> | Sends async request body only. InOut exchange, reply is expected.
+|===
+
+* Async API with Callbacks:
+** Uses Callback parameter
+** Callback is invoked when message exchange is done.
+
+* Future API:
+** _isDone_ method returns true when task is completed or on exception.
+** _get_ method returns response to task. Waits for response.
+
+ifdef::audioscript[]
+audio::audio/m01p13_asynchronous_callback_in_camel.mp3[]
+endif::[]
+
+ifdef::showscript[]
+[.notes]
+****
+//tag::snippet[]
+
+== TITLE
+
+//end::snippet[]
+****
+endif::[]

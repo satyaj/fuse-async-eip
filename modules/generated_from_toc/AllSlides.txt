@@ -1,0 +1,8 @@
+:toc: left
+
+ifndef::slideshow[]
+== Asynchronous Request Reply Pattern Over JBoss A-MQ COURSE_NAME JBoss Fuse
+endif::[]
+
+include::1_Presentation/AllSlides.txt[]
+
