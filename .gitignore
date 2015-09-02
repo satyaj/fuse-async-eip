@@ -12,6 +12,7 @@ LMSClass/
 *.out/
 *.camel/
 *error/
+*target/
 
 **/generated_content_ilt/
 **/generated_content_instructor/
