@@ -2,11 +2,11 @@
 
 == Case 3: Asynchronous Request-Reply Pattern using Camel over Seda
 
-* SEDA: asynchronous Staged Event Driven Architecture (SEDA) behaviour.
-* Messages are exchanged on a BlockingQueue 
-* Separate threads for consumer and producer.
+* *SEDA*: asynchronous _Staged Event Driven Architecture (SEDA)_ behaviour.
+* Messages are exchanged on a `BlockingQueue` 
+* Separate _threads_ for consumer and producer.
 
-* Supports asynchronous request/reply
+* Supports _asynchronous_ request/reply
 ** Caller waits for async route to complete
 ** Only chain 2 routes via seda
 
@@ -19,7 +19,7 @@ from("seda:input").to("bean:processInput").to("bean:createResponse");
 
 ----
 
-* Why use SEDA?
+* Why use *SEDA*?
 ** Asynchronous without JMS complexity/specification
 ** In memory, faster performance
 ** Use within same _CamelContext_

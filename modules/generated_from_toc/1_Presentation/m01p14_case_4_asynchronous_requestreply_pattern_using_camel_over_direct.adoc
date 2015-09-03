@@ -1,6 +1,32 @@
 // Asciidoctor attributes
 
-== Case 4: Asynchronous Request-Reply Pattern using Camel over direct
+== Case 4: Asynchronous Request-Reply Pattern using Camel Async Processor
+
+* Mix *Synchronous* and *Asynchronous* processors/components.
+
+* Asynchronous processors implement `AsyncProcessor` interface
+
+* Advantages:
+
+** No blocking calls
+** Increase Scalability 
+** Break up route to multiple thread pools.
+
+* Disadvantages:
+
+** More complex to implement
+** Throughput less than sync processors
+
+* When to Use:
+
+** Long running processes
+** Performance Scalability
+
+* *AsyncProcessor* Interface:
+** Override `boolean process(Exchange exchange, AsyncCallback callback)`
+** `callback.done(boolean sync)` when processing completed.	
+** callback returns _true_ for sync, _false_ for async
+
 
 ifdef::audioscript[]
 audio::audio/m01p14_case_4:_asynchronous_requestreply_pattern_using_camel_over_direct.mp3[]
