@@ -34,3 +34,5 @@ include::m01p14_case_4_asynchronous_requestreply_pattern_using_camel_over_direct
 
 include::m01p15_case_4_code_example_demo.adoc[]
 
+include::m01p16_summary.adoc[]
+

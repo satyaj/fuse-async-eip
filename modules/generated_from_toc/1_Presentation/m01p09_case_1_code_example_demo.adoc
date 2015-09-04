@@ -8,9 +8,9 @@
 [source, java]
 ----
                 
-                // Set the key JMS message properties that will facilitate the request/reply functionality
-                message.setJMSReplyTo(replyQueue);
-                message.setJMSCorrelationID(UUID.randomUUID().toString());
+// Set the key JMS message properties that will facilitate the request/reply functionality
+message.setJMSReplyTo(replyQueue);
+message.setJMSCorrelationID(UUID.randomUUID().toString());
 ...
 ----
 
@@ -18,26 +18,27 @@
 [source, java]
 ----
 
-           consumer.setMessageListener(new MessageListener() {
-            	@Override
-            	public void onMessage(Message reply) {
-            		// Handle replies
-            		if (reply instanceof ObjectMessage) {
-            			try {
-            				Object o = ((ObjectMessage) reply).getObject();
-	            				ObjectMessage request = 							correlationMap.remove(reply.getJMSCorrelationID());
+consumer.setMessageListener(new MessageListener() {
+	@Override
+        public void onMessage(Message reply) {
+        	// Handle replies
+            	if (reply instanceof ObjectMessage) {
+            		try {
+            			Object o = ((ObjectMessage) reply).getObject();
+	            			ObjectMessage request = 							correlationMap.remove(reply.getJMSCorrelationID());
 ...
 ----
 
-=== Server
+=== Server:
 
 [source, java]
 
 ----
-            while (true) {
-                Message message = consumer.receive(MESSAGE_TIMEOUT_MILLISECONDS);
-                if (message != null) {
-                    if (message instanceof ObjectMessage) {
+...
+while (true) {
+	Message message = consumer.receive(MESSAGE_TIMEOUT_MILLISECONDS);
+        if (message != null) {
+        	if (message instanceof ObjectMessage) {
                         Object o = ((ObjectMessage) message).getObject();
                         if (o instanceof Integer) {
 	                    	Integer factorialInput = (Integer)o;
@@ -54,6 +55,7 @@
 	                        // Send the processed message to the JMSReplyTo value
 	                        producer.send(message.getJMSReplyTo(), replyMessage);
 
+...
 ----
 
 ifdef::audioscript[]

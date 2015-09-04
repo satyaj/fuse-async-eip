@@ -26,26 +26,19 @@ public class RestRouteBuilder extends RouteBuilder {
    public void configure() throws Exception {
 	   String uri = "direct:";
   
-	   // This is the main route
-	   
+	   // This is the request route	   
 	   from("cxfrs:http://0.0.0.0:9190?resourceClasses=com.mycompany.camel.requestreply.InputDataEndpoint")
 	   .log("Body before the call : ${body}")
         .setHeader("ObjectId", xpath("person/@user"))
         .log("Header 'ObjectId' is : ${header.ObjectId}" )
-        .processRef("toLower")
-        .to("file:src/data/out")
-        .log("After file write: ${headers}")
-        .to("consumerProcessor")
-        .transform(body());
- 
-	   // This is the route from File to Seda queue
-	   from("file:src/data/out?moveFailed=error")
-	   .marshal().string("UTF-8")
-	   .log("Body after the file polling is: ${body}")
-		//.setExchangePattern(ExchangePattern.InOut)
-		.setHeader("ObjectId", xpath("person/@user"))
-		.recipientList(simple("seda:${header.ObjectId}?size=1"))
-		.log("Completed processing");
+        .to("seda:inout");
+	   
+	   // This is the route reply route
+	   from("seda:inout")
+       .setHeader("MyID", xpath("person/@user"))
+       .log("Header 'MyID' is : ${header.MyID}" )
+       .processRef("toLower")
+       .transform(body()); 
 
    }
 }

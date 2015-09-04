@@ -2,9 +2,58 @@
 
 == Case 4: Code Example & Demo
 
+* Interface:
+
+[source, java]
+----
+public interface AsyncProcessor extends Processor {
+   boolean process(Exchange exchange, AsyncCallback callback);
+}
+----
+
+* Convert any Processor to AsyncProcessor:
+
+[source, java]
+----
+Processor processor = ...
+AsyncProcessor asyncProcessor = AsyncProcessorTypeConverter.convert(processor);
+----
+
+* Using AsyncCallback in a Processor:
+
+[source, java]
+----
+final Exchange exchange = ...
+AsyncProcessor asyncProcessor = ...
+asyncProcessor.process(exchange, new AsyncCallback() {
+    public void done(boolean sync) {
+ 
+        if (exchange.isFailed()) {
+            ... // do failure processing.. perhaps rollback etc.
+        } else {
+            ... // processing completed successfully, finish up 
+                // perhaps commit etc.
+        }
+    }
+});
+----
+
 ifdef::audioscript[]
-audio::audio/m01p15_case_4:_code_example_demo.mp3[]
+audio::audio/m01p15_case_4_code_example_demo.mp3[]
 endif::[]
+
+
+ifdef::showscript[]
+[.notes]
+****
+//tag::snippet[]
+
+== TITLE
+
+//end::snippet[]
+****
+endif::[]
+
 
 
 

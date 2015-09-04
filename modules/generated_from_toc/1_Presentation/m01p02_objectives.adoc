@@ -4,7 +4,7 @@
 
 * JBoss A-MQ & JBoss Fuse Introduction
 
-* Enterprise Integration Patterns - Introduction
+* Enterprise Integration Patterns Overview
 
 * Asynchronous Request Reply Pattern
 

@@ -65,7 +65,6 @@ public class Client {
             // that implements the onMessage() method.
             MessageConsumer consumer = session.createConsumer(replyQueue);
             consumer.setMessageListener(new MessageListener() {
-            	@Override
             	public void onMessage(Message reply) {
             		// Handle replies
             		if (reply instanceof ObjectMessage) {

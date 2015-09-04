@@ -24,7 +24,6 @@
 
 	<bean id="toLower" class="com.mycompany.camel.requestreply.ToLowerProcessor" />
     <bean id="companyRouteBuilder" class="com.mycompany.camel.requestreply.RestRouteBuilder"/>
-	<bean id="consumerProcessor" class="com.mycompany.camel.requestreply.DirectConsumerBean" />
 	
 	<!-- Here is a sample which processes the input files (leaving them in place 
 		- see the 'noop' flag), and sends them on a JMS queue. This queue is watched 
@@ -41,18 +40,6 @@
         <to uri="activemq:queue:data-queue"/>
         <log message="Body after the call (request route):  ${body}"/>
     </route>
-    <route id="stream-poller">
-        <from uri="file:src/data/out"/>
-        <marshal>
-            <string charset="UTF-8"/>
-        </marshal>
-        <setHeader headerName="CamelHazelcastOperationType">
-            <constant>put</constant>
-        </setHeader>
-        <setHeader headerName="CamelHazelcastObjectId">
-            <xpath resultType="java.lang.String">/person/@user</xpath>
-        </setHeader>
-        <to uri="hazelcast:map:foo"/>
-    </route>
+ 
 </camelContext>
 </beans>

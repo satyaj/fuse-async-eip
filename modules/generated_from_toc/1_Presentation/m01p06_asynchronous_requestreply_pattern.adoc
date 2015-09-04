@@ -20,6 +20,7 @@
 
 .Request Reply Pattern
 image::images/request-reply-eip.png[]
+
 ifdef::audioscript[]
 audio::audio/m01p06_asynchronous_requestreply_pattern.mp3[]
 endif::[]

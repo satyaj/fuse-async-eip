@@ -44,10 +44,10 @@ public class DirectConsumerBean implements AsyncProcessor {
          		exchange.getIn().setBody(msg);
         		
         		System.out.println("Processed: " + msg);
-        		asyncCallback.done(false);
+        		asyncCallback.done(true);
             }
         });
-        return false;
+        return true;
 
 
 	}
