@@ -2,7 +2,7 @@
 
 == Case 1: Code Example & Demo
 
-=== Client:
+* Client:
 
 .Sending Messages to the Request Queue
 [source, java]
@@ -29,7 +29,7 @@ consumer.setMessageListener(new MessageListener() {
 ...
 ----
 
-=== Server:
+* Server:
 
 [source, java]
 

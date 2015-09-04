@@ -3,7 +3,7 @@
 == JBoss A-MQ Product Architecture
 
 * Based on _Apache ActiveMQ_, a JMS 1.1 compliant messaging system.
-* Consists of a `Message Broker` and client-side libs {icon-arrow-right} 
+* Consists of a `Message Broker` and client-side libs.
 * Enables remote communication among distributed client applications.
 * Provides support for large, complex enterprise messaging applications :
 ** Centralized configuration for brokers
@@ -11,6 +11,8 @@
 ** Centralized provisioning of master/slave groups
 ** High-speed journaling
 ** Fail-over capabilities
+
+.JBoss A-MQ Message Broker Architecture
 
 image::images/broker-architecture.png[]
 

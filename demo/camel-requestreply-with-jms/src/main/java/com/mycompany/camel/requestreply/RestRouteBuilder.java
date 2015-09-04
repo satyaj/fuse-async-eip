@@ -17,12 +17,7 @@ package com.mycompany.camel.requestreply;
  * specific language governing permissions and limitations
  * under the License.
  */
-import org.apache.camel.ConsumerTemplate;
-import org.apache.camel.ExchangePattern;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.hazelcast.HazelcastConstants;
-import org.apache.camel.model.dataformat.JsonLibrary;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class RestRouteBuilder extends RouteBuilder {
 
