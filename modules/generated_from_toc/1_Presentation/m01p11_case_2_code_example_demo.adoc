@@ -2,6 +2,31 @@
 
 == Case 2: Code Example & Demo
 
+* Request Camel Route:
+
+[source, java]
+----
+
+    <route id="request-route">
+        <from uri="cxfrs:http://0.0.0.0:9190?resourceClasses=com.mycompany.camel.requestreply.InputDataEndpoint"/>
+        <log message="Body before the call: ${body}"/>
+        <setExchangePattern pattern="InOut"/>
+        <to uri="activemq:queue:data-queue"/>
+        <log message="Body after the call (request route):  ${body}"/>
+    </route>
+----
+
+* Reply Camel Route:
+
+[source, java]
+----
+        from("activemq:queue:data-queue?asyncConsumer=true")
+        .setHeader("MyID", xpath("person/@user"))
+        .log("Header 'MyID' is : ${header.MyID}" )
+        .processRef("toLower")
+        .transform(body()); 	
+
+----
 ifdef::audioscript[]
 audio::audio/m01p10_case_2:_code_example_demo.mp3[]
 endif::[]

@@ -4,10 +4,10 @@
 
 === Asynchronous Request/Reply Pattern Implementations Discussed:
 
-. Using JMS
-. Using Camel and JMS Component
-. Using Camel and SEDA component
-. Using Camel and AsyncProcessor API
+* Using JMS
+* Using Camel and JMS Component
+* Using Camel and SEDA component
+* Using Camel and AsyncProcessor API
 
 === Questions?
 
